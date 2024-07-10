@@ -37,7 +37,7 @@ class LoginController extends Controller
     public function store(Request $request)
     {
         $data = [
-            'fullname' => $request->fullname,
+            'name' => $request->fullname,
             'password' => $request->password,
         ];
 
@@ -60,14 +60,14 @@ class LoginController extends Controller
     public function storeapi(Request $request)
     {
         $data = [
-            'fullname' => $request->fullname,
+            'name' => $request->name,
             'password' => $request->password,
         ];
 
         if (!Auth::attempt($data)) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Email dan Password Salah!!',
+                'message' => 'Email atau Password anda Salah!!',
             ], 401);
         }
 

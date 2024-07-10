@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\AkunController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\LoginController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-use App\Http\Controllers\LoginController;
+
 
 Route::post('/logins', [LoginController::class, 'storeapi']);
+Route::post('/registers', [AkunController::class, 'storeapi']);
